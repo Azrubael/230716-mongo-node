@@ -62,7 +62,7 @@ const connectOptions = {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }
-console.log(connectString)
+// console.log(connectString)
 
 mongoose.connect(connectString, connectOptions)
 .then( () => {
@@ -70,7 +70,8 @@ mongoose.connect(connectString, connectOptions)
     app.listen(cfg.node_port, () => {
         console.log("Now listening on PORT 8001")
         })
-    }, err => {
+    })
+.catch( (err) => {
         console.log("Unable to connect to MongoDB")
         console.log(err)
     }
