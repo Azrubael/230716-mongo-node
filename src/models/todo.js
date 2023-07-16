@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose"
 
 const Schema = mongoose.Schema;
 
@@ -8,8 +8,6 @@ const todoSchema = new Schema({
     type: Boolean,
     default: false,
   },
-});
+})
 
-const TodoModel = mongoose.model("Todo", todoSchema);
-
-module.exports = TodoModel;
+export const Todo = mongoose.model("Todo", todoSchema)

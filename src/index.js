@@ -1,10 +1,11 @@
-const express = require("express")
-const mongoose = require("mongoose")
-const bodyParser = require("body-parser")
-const cors = require("cors")
+import express from "express"
+import mongoose from "mongoose"
+import cors from "cors"
+import dotenv from "dotenv"
 
-const Todo = require("./models/todo")
-require("dotenv").config()
+import { Todo } from "./models/todo.js"
+
+dotenv.config()
 
 const app = express()
 const cfg = {
@@ -17,7 +18,7 @@ const cfg = {
 }
 
 
-app.use(bodyParser.json())
+app.use(express.json())
 app.use(cors())
 
 app.get("/todos", async (req, res) => {
