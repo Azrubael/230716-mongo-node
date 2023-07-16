@@ -21,6 +21,15 @@ const cfg = {
 app.use(express.json())
 app.use(cors())
 
+// abort favicon.ico request
+app.use( (req, res) => {
+    if (req.url.includes('favicon.ico')) {
+    res.statusCode = 404;
+    res.end('Not found');
+    return;
+    }
+})
+
 app.get("/todos", async (req, res) => {
     const todos = await Todo.find()
     return res.status(200).json({
