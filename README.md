@@ -1,7 +1,7 @@
 A sample project with a simple Node.js application that connects to a containerized MongoDB DBMS.
 
 * To start application:
-[1] - create a '.env' file vith credentials
+[1] - create a '.env' file with credentials
 ```bash
     $ cat .env
 # node.js app's configuration
@@ -14,18 +14,18 @@ MONGO_INITDB_PORT=27017
 MONGO_INITDB_DATABASE=app
 ```
 
-[2] - In first bash terminal
+[2] - In the first bash terminal
 ```bash
     $ docker compose up
 ```
 
-[3] - In second bash terminal
+[3] - In the second bash terminal
 ```bash
     $ npm run start
 ```
 
 
-* To correstly stop applicatiion do not forget
+* To correctly stop application do not forget
 ```bash
     $ docker compose down
 ```
